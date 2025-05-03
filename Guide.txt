@@ -1,0 +1,6 @@
+Start Tick: Running System.
+Neutral Price: input specific orderId 
+Show Position : buy button
+Show Freeze:    Sell button
+Start Freeze :  Checking status button
+Set Box Range : Cancel specific order

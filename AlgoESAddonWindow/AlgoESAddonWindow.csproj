@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<ItemGroup>
+		<Reference Include="CSharpAPI">
+		  <HintPath>..\..\..\..\..\..\..\..\TWS API\source\CSharpClient\client\bin\Debug\net48\CSharpAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="TWSLib">
+			<!-- <HintPath>C:\TWS API\source\CSharpClient\activex\bin\Debug\TWSLib.dll</HintPath> -->
+		</Reference>
+	</ItemGroup>
+</Project>

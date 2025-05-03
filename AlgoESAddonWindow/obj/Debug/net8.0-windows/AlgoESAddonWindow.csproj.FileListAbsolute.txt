@@ -1,0 +1,111 @@
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\TWSLib.dll
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\TWSLib.dll
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+D:\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\TWSLib.dll
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+C:\Users\mingc\source\repos\AlgoES 20241212\Algo\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+C:\Users\mingc\source\repos\AlgoES 20241213\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll

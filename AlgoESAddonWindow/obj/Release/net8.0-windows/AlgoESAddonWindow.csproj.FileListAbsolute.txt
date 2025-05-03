@@ -1,0 +1,7 @@
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+D:\New folder (2)\AlgoESAddonWindow\AlgoESAddonWindow\obj\Release\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
