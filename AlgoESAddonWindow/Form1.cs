@@ -76,15 +76,18 @@ namespace AlgoESAddonWindow
         {
             try
             {
-                // clientSocket.eConnect("127.0.0.1", 7497, 0);
                 clientSocket.eConnect("127.0.0.1", 7497, 0);
 
-                Console.WriteLine("commect", clientSocket);
+                if (!clientSocket.IsConnected())
+                {
+                    MessageBox.Show("Connection failed.");
+                    return;
+                }
+
                 var reader = new EReader(clientSocket, signal);
                 reader.Start();
 
-                // Create contract for the symbol you're interested in
-                new System.Threading.Thread(() =>
+                new Thread(() =>
                 {
                     while (clientSocket.IsConnected())
                     {
@@ -94,64 +97,53 @@ namespace AlgoESAddonWindow
                 })
                 { IsBackground = true }.Start();
 
+                MessageBox.Show("Connected");
 
-                // Create contract for the symbol you're interested in
-                contract = new Contract
+                Contract contractESJun25 = new Contract
                 {
-
-                    //Symbol = "ES",
-                    //SecType = "FUT",
-                    //Exchange = "GLOBEX",
-                    //Currency = "USD",
-                    //LastTradeDateOrContractMonth = "202412",
-                    //Multiplier = "50",
-
-
-
-                    Symbol = "SPY", // Example symbol
-                    SecType = "STK",
-                    Exchange = "SMART",
-                    Currency = "USD"
-
-
-                    //Symbol = "GBP", // Example symbol
-                    //SecType = "CASH",
-                    //Exchange = "IDEALPRO",
-                    //Currency = "USD"
-
-
-                };
-
-                contract2 = new Contract
-                {
-                    /*
                     Symbol = "ES",
                     SecType = "FUT",
                     Exchange = "CME",
                     Currency = "USD",
-                    LastTradeDateOrContractMonth = "202503",
-                    Multiplier = "50",
-                    */
-
-
-                    Symbol = "EUR", // Example symbol
-                    SecType = "CASH",
-                    Exchange = "IDEALPRO",
-                    Currency = "USD"
-
-
-
-
-                    //Symbol = "AMZN", // Example symbol
-                    //SecType = "STK",
-                    //Exchange = "SMART",
-                    //Currency = "USD"
-
+                    LastTradeDateOrContractMonth = "202506",
+                    Multiplier = "50"
                 };
-                // Request market data
-                Invoke(new Action(() =>clientSocket.reqMktData(1, contract, "", false, false, null)));
-                Invoke(new Action(() => clientSocket.reqMktData(2, contract2, "", false, false, null)));    
 
+                Contract contractESSep25 = new Contract
+                {
+                    Symbol = "ES",
+                    SecType = "FUT",
+                    Exchange = "CME",
+                    Currency = "USD",
+                    LastTradeDateOrContractMonth = "202509",
+                    Multiplier = "50"
+                };
+
+                Contract contractNQJun25 = new Contract
+                {
+                    Symbol = "NQ",
+                    SecType = "FUT",
+                    Exchange = "CME",
+                    Currency = "USD",
+                    LastTradeDateOrContractMonth = "202506",
+                    Multiplier = "20"
+                };
+
+                Contract contractNQSep25 = new Contract
+                {
+                    Symbol = "NQ",
+                    SecType = "FUT",
+                    Exchange = "CME",
+                    Currency = "USD",
+                    LastTradeDateOrContractMonth = "202509",
+                    Multiplier = "20"
+                };
+
+                clientSocket.reqMarketDataType(3);
+                clientSocket.reqMktData(1001, contractESJun25, "", false, false, null);
+                clientSocket.reqMktData(1002, contractESSep25, "", false, false, null);
+                clientSocket.reqMktData(1003, contractNQJun25, "", false, false, null);
+                clientSocket.reqMktData(1004, contractNQSep25, "", false, false, null);
             }
             catch (Exception ex)
             {
@@ -163,42 +155,68 @@ namespace AlgoESAddonWindow
         // EWrapper interface implementations
         public void tickPrice(int reqId, int field, double price, TickAttrib attribs)
         {
-            if (reqId == 1)
-            {
-                // Use Invoke to update the UI thread
-                if (textCurrentLongUpper.InvokeRequired)
-                {
-                    textCurrentLongUpper.Invoke(new Action(() => textCurrentLongUpper.Text = price.ToString("F4")));
-                    CheckAndCancelOrders( price); // Check for cancellation 
+            //if (reqId == 1)
+            //{
+            //    // Use Invoke to update the UI thread
+            //    if (textCurrentLongUpper.InvokeRequired)
+            //    {
+            //        textCurrentLongUpper.Invoke(new Action(() => textCurrentLongUpper.Text = price.ToString("F4")));
+            //        CheckAndCancelOrders( price); // Check for cancellation 
 
-                }
-                else
-                {
-                    textCurrentLongUpper.Text = price.ToString("F4");
-                    CheckAndCancelOrders( price); // Check for cancellation 
-                }
+            //    }
+            //    else
+            //    {
+            //        textCurrentLongUpper.Text = price.ToString("F4");
+            //        CheckAndCancelOrders( price); // Check for cancellation 
+            //    }
 
-            }
+            //}
 
-            if (reqId == 2)
-            {
-                // Use Invoke to update the UI thread
-                if (textCurrentShortUpper.InvokeRequired)
-                {
-                    textCurrentShortUpper.Invoke(new Action(() => textCurrentShortUpper.Text = price.ToString("F4")));
-                    CheckAndCancelOrders( price); // Check for cancellation 
-                }
-                else
-                {
-                    textCurrentShortUpper.Text = price.ToString("F4");
-                    CheckAndCancelOrders( price); // Check for cancellation 
-                }
-            }
+            //if (reqId == 2)
+            //{
+            //    // Use Invoke to update the UI thread
+            //    if (textCurrentShortUpper.InvokeRequired)
+            //    {
+            //        textCurrentShortUpper.Invoke(new Action(() => textCurrentShortUpper.Text = price.ToString("F4")));
+            //        CheckAndCancelOrders( price); // Check for cancellation 
+            //    }
+            //    else
+            //    {
+            //        textCurrentShortUpper.Text = price.ToString("F4");
+            //        CheckAndCancelOrders( price); // Check for cancellation 
+            //    }
+            //}
 
             //textCurrentLongUpper.Text = "No reqID = 1";
 
             //textCurrentShortUpper.Text = "No reqID = 2";
 
+            string contractName = reqId switch
+            {
+                1001 => "ES Jun25",
+                1002 => "ES Sep25",
+                1003 => "NQ Jun25",
+                1004 => "NQ Sep25",
+                _ => "Other"
+            };
+
+            string priceType = field switch
+            {
+                1 => "Bid",
+                2 => "Ask",
+                4 => "Last",
+                6 => "High",
+                7 => "Low",
+                9 => "Close",
+                _ => $"Field {field}"
+            };
+
+            textLongTradingPane.BeginInvoke(new Action(() =>
+            {
+                textLongTradingPane.AppendText(
+                    $"{DateTime.Now:HH:mm:ss} {contractName} {priceType}: {price}\n"
+                );
+            }));
         }
 
         //// Method to check if you need to cancel the order
@@ -259,15 +277,7 @@ namespace AlgoESAddonWindow
                 btnStartTrading.Text = "Start Trading";
                 btnStartTrading.BackColor = Color.Red;
                 btnStartTrading.ForeColor = Color.White;
-            }
-      
-
-
-         
-                
-
-           
-
+            }  
         }
 
         private void btnShowTrades_Click(object sender, EventArgs e)
@@ -581,7 +591,13 @@ namespace AlgoESAddonWindow
         //This part is required to use Ewrapper.
         public void error(Exception e) => Console.WriteLine($"Exception: {e.Message}");
         public void error(string str) => Console.WriteLine($"String Error: {str}");
-        public void error(int id, int errorCode, string errorMsg) { Console.WriteLine($"ID: {id}, Code: {errorCode}, Msg: {errorMsg}"); }
+        public void error(int id, int errorCode, string errorMsg) { 
+            Console.WriteLine($"ID: {id}, Code: {errorCode}, Msg: {errorMsg}");
+            textLongTradingPane.BeginInvoke(new Action(() =>
+            {
+                textLongTradingPane.AppendText($"Error {errorCode}: {errorMsg}\n");
+            }));        
+        }
         public void nextValidId(int orderId)
         {
             requestId = orderId;
@@ -602,7 +618,7 @@ namespace AlgoESAddonWindow
             Console.WriteLine($"Account time updated: {timeStamp}");
         }
         public void orderStatus(int orderId, string status, decimal filled, decimal remaining,
-                                double avgFillPrice, long permId, int parentId,
+                                double avgFillPrice, int permId, int parentId,
                                 double lastFillPrice, int clientId, string whyHeld,
                                 double mktCapPrice)
         {
@@ -990,7 +1006,11 @@ namespace AlgoESAddonWindow
 
         public void historicalData(int reqId, Bar bar)
         {
-            Console.WriteLine($"Historical Data. ReqId: {reqId}, Bar: {bar}");
+            MessageBox.Show($"Historical Data. ReqId: {reqId}, Bar: {bar}");
+            textLongTradingPane.Invoke((MethodInvoker)(() =>
+            {
+                textLongTradingPane.Text += $"Historical Data: tickerId={reqId},  price={bar.Close}\n";
+            }));
         }
 
         public void histogramData(int reqId, HistogramEntry[] entries)
