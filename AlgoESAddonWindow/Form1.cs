@@ -8,10 +8,42 @@ using System.Diagnostics;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data;
-
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AlgoESAddonWindow
 {
+    public static class ControlExtensions
+    {
+        public static Task InvokeAsync(this Control control, Action action)
+        {
+            var tcs = new TaskCompletionSource<object>();
+
+            void SafeAction()
+            {
+                try
+                {
+                    action();
+                    tcs.SetResult(null);
+                }
+                catch (Exception ex)
+                {
+                    tcs.SetException(ex);
+                }
+            }
+
+            if (control.InvokeRequired)
+            {
+                control.BeginInvoke((MethodInvoker)(() => SafeAction()));
+            }
+            else
+            {
+                SafeAction();
+            }
+
+            return tcs.Task;
+        }
+    }
     public partial class formAlgoES : Form, EWrapper
     {
         public EClientSocket clientSocket;
@@ -211,7 +243,7 @@ namespace AlgoESAddonWindow
                 _ => $"Field {field}"
             };
 
-            textLongTradingPane.BeginInvoke(new Action(() =>
+            textLongTradingPane.InvokeAsync(new Action(() =>
             {
                 textLongTradingPane.AppendText(
                     $"{DateTime.Now:HH:mm:ss} {contractName} {priceType}: {price}\n"
