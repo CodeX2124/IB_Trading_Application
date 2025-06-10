@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\IB_Trading_Application\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj": {}
+    "E:\\Project\\Trading\\IB_ALGO Backup\\IB_ALGO Backup\\AlgoESAddonWindow\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj": {}
   },
   "projects": {
-    "E:\\Project\\IB_Trading_Application\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj": {
+    "E:\\Project\\Trading\\IB_ALGO Backup\\IB_ALGO Backup\\AlgoESAddonWindow\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\IB_Trading_Application\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj",
+        "projectUniqueName": "E:\\Project\\Trading\\IB_ALGO Backup\\IB_ALGO Backup\\AlgoESAddonWindow\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj",
         "projectName": "AlgoESAddonWindow",
-        "projectPath": "E:\\Project\\IB_Trading_Application\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj",
+        "projectPath": "E:\\Project\\Trading\\IB_ALGO Backup\\IB_ALGO Backup\\AlgoESAddonWindow\\AlgoESAddonWindow\\AlgoESAddonWindow.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\IB_Trading_Application\\AlgoESAddonWindow\\obj\\",
+        "outputPath": "E:\\Project\\Trading\\IB_ALGO Backup\\IB_ALGO Backup\\AlgoESAddonWindow\\AlgoESAddonWindow\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

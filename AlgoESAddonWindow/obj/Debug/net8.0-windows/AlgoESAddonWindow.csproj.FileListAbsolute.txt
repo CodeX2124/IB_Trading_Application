@@ -109,24 +109,22 @@ C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj
 C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
 C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
 C:\Users\Warner\Downloads\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.dll
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.pdb
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.formAlgoES.resources
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.sourcelink.json
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
-E:\Project\IB_Trading_Application\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.exe
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.deps.json
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.runtimeconfig.json
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.dll
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\bin\Debug\net8.0-windows\CSharpAPI.dll
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.AssemblyReference.cache
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.ControlExtensions.resources
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.GenerateResource.cache
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfoInputs.cache
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.AssemblyInfo.cs
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.csproj.CoreCompileInputs.cache
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAd.EF59630B.Up2Date
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.dll
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\refint\AlgoESAddonWindow.dll
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.pdb
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\AlgoESAddonWindow.genruntimeconfig.cache
+E:\Project\Trading\IB_ALGO Backup\IB_ALGO Backup\AlgoESAddonWindow\AlgoESAddonWindow\obj\Debug\net8.0-windows\ref\AlgoESAddonWindow.dll

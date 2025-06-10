@@ -10,6 +10,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
+using System.Collections.Concurrent;
 
 namespace AlgoESAddonWindow
 {
@@ -49,8 +52,8 @@ namespace AlgoESAddonWindow
         public EClientSocket clientSocket;
         public int requestId = 0;
         public readonly EReaderSignal signal;
-        public Contract contract;
-        public Contract contract2;
+        public Contract contractNQJun25;
+        public Contract contractNQSep25;
         public Order sellOrder, buyOrder;
         public EReader reader;
         public int requestIdAAPL = 1; // Unique request ID for ESZ24
@@ -67,12 +70,12 @@ namespace AlgoESAddonWindow
         OrderCancel orderCancel;
         // Field to store submitted price
         public double orderPrice;
-        private Dictionary<int, string> orderStatuses;
+        private readonly ConcurrentDictionary<int, string> orderStatuses = new();
         private Dictionary<int, double> submittedPrices; // Store submitted prices
         public const double POINT_THRESHOLD = 1; // Threshold for cancellation
         public double pipValue ;
-
-
+        public List<Dictionary<string, string>> allOrders = new List<Dictionary<string, string>>();
+        private Dictionary<int, Dictionary<string, string>> ordersDict = new();
         public formAlgoES()
         {
             InitializeComponent();
@@ -83,14 +86,13 @@ namespace AlgoESAddonWindow
 
             reader = new EReader(clientSocket, signal);
 
-            contract = new Contract();
-            contract2 = new Contract();
+            contractNQJun25 = new Contract();
+            contractNQSep25 = new Contract();
 
             sellOrder = new Order();
             buyOrder = new Order();
 
             orderStatusMessage = string.Empty;
-            orderStatuses = new Dictionary<int, string>();
             submittedPrices = new Dictionary<int, double>();
             panelLongTrade.AutoScroll = true;
             panelLongTrade.AutoSize = false;
@@ -131,27 +133,27 @@ namespace AlgoESAddonWindow
 
                 MessageBox.Show("Connected");
 
-                Contract contractESJun25 = new Contract
-                {
-                    Symbol = "ES",
-                    SecType = "FUT",
-                    Exchange = "CME",
-                    Currency = "USD",
-                    LastTradeDateOrContractMonth = "202506",
-                    Multiplier = "50"
-                };
+                //Contract contractESJun25 = new Contract
+                //{
+                //    Symbol = "ES",
+                //    SecType = "FUT",
+                //    Exchange = "CME",
+                //    Currency = "USD",
+                //    LastTradeDateOrContractMonth = "202506",
+                //    Multiplier = "50"
+                //};
 
-                Contract contractESSep25 = new Contract
-                {
-                    Symbol = "ES",
-                    SecType = "FUT",
-                    Exchange = "CME",
-                    Currency = "USD",
-                    LastTradeDateOrContractMonth = "202509",
-                    Multiplier = "50"
-                };
+                //Contract contractESSep25 = new Contract
+                //{
+                //    Symbol = "ES",
+                //    SecType = "FUT",
+                //    Exchange = "CME",
+                //    Currency = "USD",
+                //    LastTradeDateOrContractMonth = "202509",
+                //    Multiplier = "50"
+                //};
 
-                Contract contractNQJun25 = new Contract
+                contractNQJun25 = new Contract
                 {
                     Symbol = "NQ",
                     SecType = "FUT",
@@ -161,7 +163,7 @@ namespace AlgoESAddonWindow
                     Multiplier = "20"
                 };
 
-                Contract contractNQSep25 = new Contract
+                contractNQSep25 = new Contract
                 {
                     Symbol = "NQ",
                     SecType = "FUT",
@@ -172,8 +174,8 @@ namespace AlgoESAddonWindow
                 };
 
                 clientSocket.reqMarketDataType(3);
-                clientSocket.reqMktData(1001, contractESJun25, "", false, false, null);
-                clientSocket.reqMktData(1002, contractESSep25, "", false, false, null);
+                //clientSocket.reqMktData(1001, contractESJun25, "", false, false, null);
+                //clientSocket.reqMktData(1002, contractESSep25, "", false, false, null);
                 clientSocket.reqMktData(1003, contractNQJun25, "", false, false, null);
                 clientSocket.reqMktData(1004, contractNQSep25, "", false, false, null);
             }
@@ -243,12 +245,12 @@ namespace AlgoESAddonWindow
                 _ => $"Field {field}"
             };
 
-            textLongTradingPane.InvokeAsync(new Action(() =>
-            {
-                textLongTradingPane.AppendText(
-                    $"{DateTime.Now:HH:mm:ss} {contractName} {priceType}: {price}\n"
-                );
-            }));
+            //textLongTradingPane.InvokeAsync(new Action(() =>
+            //{
+            //    textLongTradingPane.AppendText(
+            //        $"{DateTime.Now:HH:mm:ss} {contractName} {priceType}: {price}\n"
+            //    );
+            //}));
         }
 
         //// Method to check if you need to cancel the order
@@ -313,79 +315,154 @@ namespace AlgoESAddonWindow
         }
 
         private void btnShowTrades_Click(object sender, EventArgs e)
-        {
-            buyOrder = new Order
+        {   
+            if (_boolStartTrading == true)
             {
-                Action = "BUY",
-                TotalQuantity = 100,
-                OrderType = "LMT",
-                LmtPrice = double.Parse(textCurrentLongUpperPosition.Text),
-                Tif = "DAY"
-            };
-            clientSocket.reqContractDetails(1, contract);
-            clientSocket.placeOrder(requestId, contract, buyOrder);
-            orderPrice = double.Parse(textCurrentLongUpperPosition.Text);
-            requestId++;
+                _boolShowTrades = !_boolShowTrades;
 
+                if (_boolShowTrades == true)
+                {
+                    btnShowTrades.Text = "Show Positions";
+                    btnShowTrades.BackColor = Color.Gray;
+                    btnShowTrades.ForeColor = Color.Black;
 
-            _boolShowTrades = !_boolShowTrades;
+                    _boolShowTrades = true;
 
-            if (_boolShowTrades == true)
-            {
-                btnShowTrades.Text = "Show Positions";
-                btnShowTrades.BackColor = Color.Gray;
-                btnShowTrades.ForeColor = Color.Black;
+                    if (double.TryParse(txtNeutralPrice.Text, out double buyPrice))
+                    {
+                        // IBKR-specific validation
+                        if (buyPrice <= 0)
+                        {
+                            MessageBox.Show("Price must be greater than zero");
+                            _boolShowTrades = false;
+                            btnShowTrades.Text = "Show Trades";
+                            return;
+                        }
 
-                _boolShowTrades = true;
-            }
-            else
-            {
-                btnShowTrades.Text = "Show Trades";
-                btnShowTrades.BackColor = Color.Blue;
-                btnShowTrades.ForeColor = Color.White;
+                        buyOrder = new Order
+                        {
+                            Action = "BUY",
+                            TotalQuantity = 100,
+                            OrderType = "LMT",
+                            LmtPrice = buyPrice,
+                            Tif = "DAY"
+                        };
+                        clientSocket.reqContractDetails(1003, contractNQJun25);
+                        clientSocket.placeOrder(requestId, contractNQJun25, buyOrder);
+                        //orderPrice = double.Parse(textCurrentLongUpperPosition.Text);
+                        textLongTradingPane.AppendText(
+                            $"Successfully buy order submitted: {requestId}\n"
+                        );
+                        allOrders.Add(new Dictionary<string, string>
+                        {
+                            { "OrderId", requestId.ToString()},
+                            { "Action", buyOrder.Action.ToString()},
+                            { "OrderType", buyOrder.OrderType.ToString() },
+                            { "Status", "Inactive" }
+                        });
+                        requestId++;
 
-                _boolShowTrades = false;
+                    }
+                    else
+                    {
+                        btnShowTrades.Text = "Show Trades";
+                        _boolShowTrades = false;
+                        MessageBox.Show("Please input the price for buy");
+                    }
+                }
+                else
+                {
+                    btnShowTrades.Text = "Show Trades";
+                    btnShowTrades.BackColor = Color.Blue;
+                    btnShowTrades.ForeColor = Color.White;
+
+                    _boolShowTrades = false;
+                }
             }
         }
 
         private void btnStartAutoExposure_Click(object sender, EventArgs e)
         {
-            _boolStartAutoExposure = !_boolStartAutoExposure;
+            if (_boolStartTrading == true) {
 
-            if (_boolStartAutoExposure == true)
-            {
-                btnStartAutoExposure.Text = "Stop Freeze";
-                btnStartAutoExposure.BackColor = Color.Gray;
-                btnStartAutoExposure.ForeColor = Color.Black;
+                _boolStartAutoExposure = !_boolStartAutoExposure;
 
-                _boolStartAutoExposure = true;
-            }
-            else
-            {
-                btnStartAutoExposure.Text = "Start Freeze";
-                btnStartAutoExposure.BackColor = Color.Red;
-                btnStartAutoExposure.ForeColor = Color.White;
-
-                _boolStartAutoExposure = false;
-            }
-
-            // If you click this btnStartAutoExposure_Click button, you can see order status in textShortTradingPane.Text when you input orderID in txtNeutralPrice.Text
-            try
-            {
-
-                // Parse the order ID from the TextBox
-                if (int.TryParse(txtNeutralPrice.Text, out int orderId))
+                if (_boolStartAutoExposure == true)
                 {
-                    UpdateOrderStatusDisplay(orderId, orderStatuses[orderId]);
+                    btnStartAutoExposure.Text = "Stop Freeze";
+                    btnStartAutoExposure.BackColor = Color.Gray;
+                    btnStartAutoExposure.ForeColor = Color.Black;
+
+                    _boolStartAutoExposure = true;
+
+                    if (double.TryParse(txtBackMinusFrontPoints.Text, out double sellPrice))
+                    {
+                        // IBKR-specific validation
+                        if (sellPrice <= 0)
+                        {
+                            MessageBox.Show("Price must be greater than zero");
+                            _boolStartAutoExposure = false;
+                            btnStartAutoExposure.Text = "Start Freeze";
+                            return;
+                        }
+
+                        sellOrder = new Order
+                        {
+                            Action = "SELL",
+                            TotalQuantity = 100,
+                            OrderType = "LMT",
+                            LmtPrice = sellPrice,
+                            Tif = "DAY"
+                        };
+                        clientSocket.reqContractDetails(1004, contractNQSep25);
+                        clientSocket.placeOrder(requestId, contractNQSep25, sellOrder);
+                        textLongTradingPane.AppendText(
+                            $"Successfully sell order submitted: {requestId}\n"
+                        );
+                        //orderPrice = double.Parse(textCurrentLongUpperPosition.Text);
+                        allOrders.Add(new Dictionary<string, string>
+                        {
+                            { "OrderId", requestId.ToString()},
+                            { "Action", sellOrder.Action.ToString()},
+                            { "OrderType", sellOrder.OrderType.ToString() },
+                            { "Status", "Inactive" }
+                        });
+                        requestId++;
+                    }
+                    else
+                    {
+                        btnStartAutoExposure.Text = "Start Freeze";
+                        _boolShowTrades = false;
+                        MessageBox.Show("Please input the price for sell");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid order ID.");
+                    btnStartAutoExposure.Text = "Start Freeze";
+                    btnStartAutoExposure.BackColor = Color.Red;
+                    btnStartAutoExposure.ForeColor = Color.White;
+
+                    _boolStartAutoExposure = false;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error fetching order status: {ex.Message}");
+
+                // If you click this btnStartAutoExposure_Click button, you can see order status in textShortTradingPane.Text when you input orderID in txtNeutralPrice.Text
+                //try
+                //{
+
+                //    // Parse the order ID from the TextBox
+                //    if (int.TryParse(txtNeutralPrice.Text, out int orderId))
+                //    {
+                //        UpdateOrderStatusDisplay(orderId, orderStatuses[orderId]);
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Please enter a valid order ID.");
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show($"Error fetching order status: {ex.Message}");
+                //}
             }
 
         }
@@ -422,9 +499,38 @@ namespace AlgoESAddonWindow
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void GetPlacedOrderStatus(string orderId)
         {
+            var existingInList = allOrders.FirstOrDefault(o => o["OrderId"] == orderId.ToString());
+            if (existingInList != null)
+            {
+                MessageBox.Show($"OrderId : {existingInList["OrderId"]}, Status : {existingInList["Status"]}");
+                // Update other fields as needed
+            } else
+            {
+                MessageBox.Show("Invalid requestId!!!");
+            }
+        }
 
+        private void btnShowFreeze_Click(object sender, EventArgs e)
+        {
+            if (!clientSocket.IsConnected())
+            {
+                MessageBox.Show("Not connected to IBKR.");
+                return;
+            }
+
+            clientSocket.reqAllOpenOrders();               // Request all open orders (manual + API)
+            clientSocket.reqAutoOpenOrders(true);          // Bind future manual orders to client 0
+
+            if (!string.IsNullOrEmpty(textTradeBoxExposure.Text))
+            {
+               GetPlacedOrderStatus(textTradeBoxExposure.Text.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid order ID");
+            }
         }
         private void btnNoKeepPositions_Click(object sender, EventArgs e)
         {
@@ -437,16 +543,40 @@ namespace AlgoESAddonWindow
             try
             {
                 // Parse the order ID from the TextBox
-                if (int.TryParse(txtNeutralPrice.Text, out int orderIdchange))
+                if (int.TryParse(txtMaxExposure.Text, out int cancelRequestID))
                 {
                     // Send cancellation request for the specified order ID
-                    clientSocket.cancelOrder(orderIdchange, orderCancel);
-                    orderchange(orderIdchange, "Cancelled");
-                    MessageBox.Show($"Order ID {orderIdchange} has been canceled.");
+                    clientSocket.cancelOrder(cancelRequestID, orderCancel);
+                    orderchange(cancelRequestID, "Cancelled");
+
+                    textLongTradingPane.AppendText(
+                            $"Request ID {cancelRequestID} has been cancelled.\n"
+                        );
+
+                    if (!ordersDict.TryGetValue(cancelRequestID, out var orderData))
+                    {
+                        orderData = new Dictionary<string, string>();
+                        ordersDict[cancelRequestID] = orderData;
+                    }
+
+                    // Update order data
+                    orderData["OrderId"] = cancelRequestID.ToString();
+                    orderData["Status"] = "Cancelled";
+                    //orderData["Filled"] = filled.ToString();
+
+                    var existingInList = allOrders.FirstOrDefault(o => o["OrderId"] == cancelRequestID.ToString());
+                    if (existingInList != null)
+                    {
+                        existingInList["Status"] = "Cancelled";
+                    }
+                    else
+                    {
+                        allOrders.Add(new Dictionary<string, string>(orderData));
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid order ID.");
+                    MessageBox.Show("Please enter a valid request ID.");
                 }
             }
             catch (Exception ex)
@@ -457,17 +587,17 @@ namespace AlgoESAddonWindow
         // The function that you are going to cancel specific order 
         private void orderchange(int orderIdchange, String orderstatuschange)
         {
-            if (textShortTradingPane.InvokeRequired)
-            {
-                textShortTradingPane.Invoke(new Action(() =>
-                {
-                    textShortTradingPane.Text = $"Order ID: {orderIdchange}, Status: {orderstatuschange}";
-                }));
-            }
-            else
-            {
-                textShortTradingPane.Text = $"Order ID: {orderIdchange}, Status: {orderstatuschange}";
-            }
+            //if (textShortTradingPane.InvokeRequired)
+            //{
+            //    textShortTradingPane.Invoke(new Action(() =>
+            //    {
+            //        textShortTradingPane.Text = $"Order ID: {orderIdchange}, Status: {orderstatuschange}";
+            //    }));
+            //}
+            //else
+            //{
+            //    textShortTradingPane.Text = $"Order ID: {orderIdchange}, Status: {orderstatuschange}";
+            //}
         }
         private void btnLongTakeLoss_Click(object sender, EventArgs e)
         {
@@ -566,7 +696,7 @@ namespace AlgoESAddonWindow
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnKeepPositions_Click(object sender, EventArgs e)
         {
 
         }
@@ -654,72 +784,92 @@ namespace AlgoESAddonWindow
                                 double lastFillPrice, int clientId, string whyHeld,
                                 double mktCapPrice)
         {
-            if (status == "Submitted")
-            {
-                submittedPrices[orderId] = orderPrice; // your submitted price
-            }
-            //requestId++;
 
-            // Update the local dictionary with the new status
-            if (orderStatuses.ContainsKey(orderId))
+            if (!ordersDict.TryGetValue(orderId, out var orderData))
             {
-                orderStatuses[orderId] = status; // Update existing status
+                orderData = new Dictionary<string, string>();
+                ordersDict[orderId] = orderData;
+            }
+
+            // Update order data
+            orderData["OrderId"] = orderId.ToString();
+            orderData["Status"] = status;
+            //orderData["Filled"] = filled.ToString();
+
+            var existingInList = allOrders.FirstOrDefault(o => o["OrderId"] == orderId.ToString());
+            if (existingInList != null)
+            {
+                existingInList["Status"] = status;
             }
             else
             {
-                orderStatuses.Add(orderId, status); // Add new order
+                allOrders.Add(new Dictionary<string, string>(orderData));
             }
+        }
+        public void orderBound(long orderId, int apiClientId, int apiOrderId)
+        {
+            Console.WriteLine($"Order Bound. OrderId: {orderId}, API ClientId: {apiClientId}, API OrderId: {apiOrderId}");
+        }
 
+        public void openOrderEnd()
+        {
+            Console.WriteLine("All open orders received.\n");
+        }
 
-            orderIdchange = orderId;
-            orderstatuschange = status;
-            // Update the UI with all current statuses
-            UpdateAllOrderStatusUI();
-
-            // Log the order status to console for debugging
-            Console.WriteLine($"Order Status Update - ID: {orderId}, Status: {status}, Filled: {filled}, " +
-                             $"Remaining: {remaining}, Avg Fill Price: {avgFillPrice}");
-
+        public void openOrder(int orderId, Contract contract, Order order, OrderState orderState)
+        {
+           string newOrder = $"OrderId: {orderId}, Action: {order.Action}, OrderType: {order.OrderType}, Status: {orderState.Status}";
+            //orderStatuses[orderId] = orderState.Status;
+            allOrders.Add(new Dictionary<string, string>
+            {
+                { "OrderId", orderId.ToString()},
+                { "Action", order.Action },
+                { "OrderType", order.OrderType },
+                { "Status", orderState.Status }
+            });
+            // Optionally update UI (thread-safe)
+            textShortTradingPane.InvokeAsync(() =>
+            {
+                textShortTradingPane.AppendText($"{newOrder}\n");
+            });
         }
         // Helper method to update textShortTradingPane with specific order's status
-        private void UpdateOrderStatusDisplay(int orderId, string status)
+        private void UpdateOrderStatusDisplay(int orderId)
         {
-            if (textShortTradingPane.InvokeRequired)
-            {
-                textShortTradingPane.Invoke(new Action(() =>
-                {
-                    textShortTradingPane.Text = $"Order ID: {orderId}, Status: {status}"; // Display current status
-                }));
-            }
-            else
-            {
-                textShortTradingPane.Text = $"Order ID: {orderId}, Status: {status}"; // Display current status
-            }
+            //if (textShortTradingPane.InvokeRequired)
+            //{
+            //    textShortTradingPane.Invoke(new Action(() =>
+            //    {
+            //        textShortTradingPane.Text = $"Order ID: {orderId}, Status: {status}"; // Display current status
+            //    }));
+            //}
+            //else
+            //{
+            //    textShortTradingPane.Text = $"Order ID: {orderId}, Status: {status}"; // Display current status
+            //}
         }
         private void UpdateAllOrderStatusUI()
         {
-            if (textLongTradingPane.InvokeRequired)
+            try
             {
-                textLongTradingPane.Invoke(new Action(() =>
+                if (textShortTradingPane.InvokeRequired)
                 {
-                    // Clear previous data and display all current statuses
-                    textLongTradingPane.Text = string.Empty; // Clear previous data
-
-                    foreach (var order in orderStatuses)
+                    textShortTradingPane.Invoke(new Action(() =>
                     {
-                        textLongTradingPane.Text += $"Order ID: {order.Key}, Status: {order.Value}\n"; // Append current statuses
-                    }
-                }));
-            }
-            else
-            {
-                // Clear previous data and display all current statuses
-                textLongTradingPane.Text = string.Empty; // Clear previous data
-
-                foreach (var order in orderStatuses)
-                {
-                    textLongTradingPane.Text += $"Order ID: {order.Key}, Status: {order.Value}\n"; // Append current statuses
+                        if (int.TryParse(textTradeBoxExposure.Text, out int statusRequestID))
+                        {
+                            UpdateOrderStatusDisplay(statusRequestID);
+                        }
+                    }));
                 }
+                else
+                {
+                    MessageBox.Show("Please input requestId to show stauts");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating UI: {ex.Message}");
             }
         }
         public void wshMetaData(int reqId, string data)
@@ -914,7 +1064,7 @@ namespace AlgoESAddonWindow
 
         public void position(string account, Contract contract, decimal pos, double avgCost)
         {
-            Console.WriteLine($"Position. Account: {account}, Contract: {contract}, Position: {pos}, Avg Cost: {avgCost}");
+            MessageBox.Show($"Position. Account: {account}, Contract: {contract}, Position: {pos}, Avg Cost: {avgCost}");
         }
 
         public void pnlSingle(int reqId, decimal pos, double dailyPnL, double unrealizedPnL, double realizedPnL, double value)
@@ -927,21 +1077,7 @@ namespace AlgoESAddonWindow
             Console.WriteLine($"PNL. ReqId: {reqId}, Daily PnL: {dailyPnL}, Unrealized PNL: {unrealizedPnL}, Realized PNL: {realizedPnL}");
         }
 
-        public void orderBound(long orderId, int apiClientId, int apiOrderId)
-        {
-            Console.WriteLine($"Order Bound. OrderId: {orderId}, API ClientId: {apiClientId}, API OrderId: {apiOrderId}");
-        }
-
-        public void openOrderEnd()
-        {
-            Console.WriteLine("Open Order End.");
-        }
-
-        public void openOrder(int orderId, Contract contract, Order order, OrderState orderState)
-        {
-            Console.WriteLine($"Open Order. OrderId: {orderId}, Contract: {contract}, Order: {order}, OrderState: {orderState}");
-        }
-
+        
         public void newsProviders(NewsProvider[] newsProviders)
         {
             Console.WriteLine("News Providers:");
@@ -1219,19 +1355,7 @@ namespace AlgoESAddonWindow
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            sellOrder = new Order
-            {
-                Action = "SELL",
-                TotalQuantity = 100,
-                OrderType = "LMT",
-                LmtPrice = double.Parse(textCurrentShortUpper.Text),
-                Tif = "DAY"
-            };
-
-            clientSocket.reqContractDetails(2, contract2);
-            clientSocket.placeOrder(requestId, contract2, sellOrder);
-            orderPrice = double.Parse(textCurrentShortUpper.Text);
-            requestId++;
+            
         }
     }
 }

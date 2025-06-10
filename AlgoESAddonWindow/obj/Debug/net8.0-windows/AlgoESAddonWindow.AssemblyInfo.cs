@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlgoESAddonWindow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be9b58ac6a442e6ec17e5ac2ea6bf2e2c882e2a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlgoESAddonWindow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlgoESAddonWindow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
