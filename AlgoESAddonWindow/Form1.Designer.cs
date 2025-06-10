@@ -30,7 +30,7 @@
         {
             paneTradeControl = new Panel();
             panelCurrentShortTrade = new Panel();
-            button1 = new Button();
+            btnShowFreeze = new Button();
             textShortTradeBlock = new TextBox();
             textCurrentShortNumPositions = new TextBox();
             textCurrentShortMaxExpo = new TextBox();
@@ -198,7 +198,7 @@
             panelCurrentShortTrade.AutoScroll = true;
             panelCurrentShortTrade.AutoSize = true;
             panelCurrentShortTrade.BackColor = Color.FromArgb(255, 192, 192);
-            panelCurrentShortTrade.Controls.Add(button1);
+            panelCurrentShortTrade.Controls.Add(btnShowFreeze);
             panelCurrentShortTrade.Controls.Add(textShortTradeBlock);
             panelCurrentShortTrade.Controls.Add(textCurrentShortNumPositions);
             panelCurrentShortTrade.Controls.Add(textCurrentShortMaxExpo);
@@ -219,19 +219,19 @@
             panelCurrentShortTrade.Size = new Size(443, 119);
             panelCurrentShortTrade.TabIndex = 5;
             // 
-            // button1
+            // btnShowFreeze
             // 
-            button1.BackColor = Color.Blue;
-            button1.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(1, 53);
-            button1.Margin = new Padding(4, 3, 4, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(76, 60);
-            button1.TabIndex = 40;
-            button1.Text = "Show Freeze";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_2;
+            btnShowFreeze.BackColor = Color.Blue;
+            btnShowFreeze.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnShowFreeze.ForeColor = Color.White;
+            btnShowFreeze.Location = new Point(1, 53);
+            btnShowFreeze.Margin = new Padding(4, 3, 4, 3);
+            btnShowFreeze.Name = "btnShowFreeze";
+            btnShowFreeze.Size = new Size(76, 60);
+            btnShowFreeze.TabIndex = 40;
+            btnShowFreeze.Text = "Show Freeze";
+            btnShowFreeze.UseVisualStyleBackColor = false;
+            btnShowFreeze.Click += btnShowFreeze_Click;
             // 
             // textShortTradeBlock
             // 
@@ -1297,7 +1297,7 @@
             btnKeepPositions.TabIndex = 56;
             btnKeepPositions.Text = "Keep Positions";
             btnKeepPositions.UseVisualStyleBackColor = false;
-            btnKeepPositions.Click += button1_Click;
+            btnKeepPositions.Click += btnKeepPositions_Click;
             // 
             // textFixedNumContracts
             // 
@@ -1896,7 +1896,7 @@
         public Label labMaxFreeze;
         public TextBox txtMinFreeze;
         public Label labMinFreeze;
-        public Button button1;
+        public Button btnShowFreeze;
         public Button btnBearHedge;
         public Button btnInactivateRange;
         public Button btnRegionFixed;

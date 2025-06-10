@@ -1,6 +1,13 @@
-Start Tick: Running System.
-Neutral Price: input specific orderId 
-Show Position : buy button
-Show Freeze:    Sell button
-Start Freeze :  Checking status button
+Start Tick: Running System and connect with IBKR.
+Start Trading: button to start.
+
+Neutral Price: Price to buy NQSep25 contract
+Back-Front: Price to sell NQJun25 contract
+Max Expo: RequestId to cancel
+Box Max: RequestId to check status
+  
+Start Freeze : Sell button
+Show Trades:    Buy button
 Set Box Range : Cancel specific order
+Show Freeze: Check status of specific requestId
+
